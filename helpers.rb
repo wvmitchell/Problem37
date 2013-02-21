@@ -22,9 +22,27 @@ def prime?(number)
 end
 
 def can_truncate_LTR(num)
-  true
+  if prime?(num) 
+    if num.to_s.length == 1
+      return true if num != 1
+    else
+      length = num.to_s.length
+      return can_truncate_LTR(num.to_s[1...length].to_i)
+    end
+  else
+    return false
+  end
 end
 
 def can_truncate_RTL(num)
-  true
+  if prime?(num)
+    if num.to_s.length == 1
+      return true if num != 1
+    else
+      length = num.to_s.length
+      return can_truncate_RTL(num.to_s[0...length-1].to_i)
+    end
+  else
+    return false
+  end
 end

@@ -17,11 +17,9 @@ count = 0
 test = 11
 
 while true
-  if prime?(test)
-    if can_truncate_LTR(test) && can_truncate_LTR(test)
-      count += 1
-      puts test
-    end
+  if can_truncate_LTR(test) && can_truncate_RTL(test)
+    count += 1
+    puts test
   end
   break if count == 11
   test += 1
