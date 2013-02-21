@@ -1,0 +1,28 @@
+load "helpers.rb"
+
+puts "Greetings, this simple program will find the only 11 primes which can be truncated from left to right and right to left, and remain prime throughout"
+
+puts "Note: The primes 2, 3, 5, and 7 are not considered to be truncatable"
+
+puts "Printing in"
+i = 5
+5.times {
+  sleep 0.5
+  puts i
+  i -= 1
+}
+puts "\n"
+count = 0
+
+test = 11
+
+while true
+  if prime?(test)
+    if can_truncate_LTR(test) && can_truncate_LTR(test)
+      count += 1
+      puts test
+    end
+  end
+  break if count == 11
+  test += 1
+end
