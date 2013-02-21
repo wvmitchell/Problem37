@@ -6,6 +6,11 @@ def prime?(number)
   if number == 2
     return true
   end
+  
+  # One is not a prime
+  if number == 1
+    return false
+  end
 
   # To check if a number is prime, use modulo division on the number and all the $
   # If the answer is ever 0, the number is not prime
@@ -24,7 +29,7 @@ end
 def can_truncate_LTR(num)
   if prime?(num) 
     if num.to_s.length == 1
-      return true if num != 1
+      return true
     else
       length = num.to_s.length
       return can_truncate_LTR(num.to_s[1...length].to_i)
@@ -37,7 +42,7 @@ end
 def can_truncate_RTL(num)
   if prime?(num)
     if num.to_s.length == 1
-      return true if num != 1
+      return true
     else
       length = num.to_s.length
       return can_truncate_RTL(num.to_s[0...length-1].to_i)

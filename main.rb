@@ -15,12 +15,15 @@ puts "\n"
 count = 0
 
 test = 11
-
+sum = 0
 while true
   if can_truncate_LTR(test) && can_truncate_RTL(test)
     count += 1
     puts test
+    sum += test
   end
   break if count == 11
   test += 1
 end
+
+puts "\nThe sum of the only 11 primes which can be truncated both LTR and RTL is #{sum}. Adios!"
